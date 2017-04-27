@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.stenofh.rgbhexconverter.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:id="@+id/areaColorSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:padding="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true">
+
+        <LinearLayout
+            android:id="@+id/areaInputs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textViewRGB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[RGB]"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/editTextRed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="127"
+                        android:textColor="@color/red"
+                        android:maxLength="3"
+                        android:digits="0123456789"
+                        android:inputType="numberDecimal"/>
+
+                    <EditText
+                        android:id="@+id/editTextGreen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="127"
+                        android:textColor="@color/green"
+                        android:maxLength="3"
+                        android:digits="0123456789"
+                        android:inputType="numberDecimal"/>
+
+                    <EditText
+                        android:id="@+id/editTextBlue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="127"
+                        android:textColor="@color/blue"
+                        android:maxLength="3"
+                        android:digits="0123456789"
+                        android:inputType="numberDecimal"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/buttonRgbToHex"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="RGB To HEX"
+                    android:background="@drawable/button_selector"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/white"/>
+
+                <Button
+                    android:id="@+id/buttonHexToRgb"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="HEX To RGB"
+                    android:background="@drawable/button_selector"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textViewHEX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[HEX]"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#"/>
+
+                    <EditText
+                        android:id="@+id/editTextHex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="7F7F7F"
+                        android:maxLength="6"
+                        android:digits="0123456789ABCDEF"
+                        android:inputType="textCapCharacters"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/areaSeekBarRed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/textViewRed"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="RED"
+                android:textColor="@color/red"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+            <SeekBar
+                android:id="@+id/seekBarRed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="255"
+                android:progress="127"/>
+
+            <TextView
+                android:id="@+id/textViewRedValue"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="127"
+                android:textColor="@color/red"
+                android:layout_weight="1"
+                android:gravity="left"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/areaSeekBarGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/textViewGreen"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="GREEN"
+                android:textColor="@color/green"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+            <SeekBar
+                android:id="@+id/seekBarGreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="255"
+                android:progress="127"/>
+
+            <TextView
+                android:id="@+id/textViewGreenValue"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="127"
+                android:textColor="@color/green"
+                android:layout_weight="1"
+                android:gravity="left"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/areaSeekBarBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/textViewBlue"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="BLUE"
+                android:textColor="@color/blue"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+            <SeekBar
+                android:id="@+id/seekBarBlue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="255"
+                android:progress="127"/>
+
+            <TextView
+                android:id="@+id/textViewBlueValue"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="127"
+                android:textColor="@color/blue"
+                android:layout_weight="1"
+                android:gravity="left"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/areaColorResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/areaColorSettings"
+        android:layout_margin="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[COLOR VIEW]"
+            android:layout_marginBottom="10dp"/>
+
+        <View
+            android:id="@+id/viewColor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#7F7F7F"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

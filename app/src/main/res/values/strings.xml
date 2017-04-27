@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RGB HEX Converter</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About</string>
+
+    <!-- About -->
+    <string name="about_title">RGB/HEX Converter ABOUT</string>
+    <string name="about_message">This app was developed by Leonardo Stenofh to help beginner front-end developers
+    to convert and view colors in RGB and HEX format.</string>
+    <string name="ok">OK</string>
+</resources>
