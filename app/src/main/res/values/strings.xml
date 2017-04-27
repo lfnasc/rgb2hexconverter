@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RGB HEX Converter</string>
+    <string name="app_name">RGB 2 HEX Converter</string>
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
 
