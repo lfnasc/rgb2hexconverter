@@ -20,6 +20,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnTextChanged;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 progressRedStr = String.valueOf(progressRed);
                 textViewRedValue.setText(progressRedStr);
                 editTextRed.setText(progressRedStr);
+                onConvertRgbToHex();
             }
 
             @Override
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 progressGreenStr = String.valueOf(progressGreen);
                 textViewGreenValue.setText(progressGreenStr);
                 editTextGreen.setText(progressGreenStr);
+                onConvertRgbToHex();
             }
 
             @Override
@@ -114,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 progressBlueStr = String.valueOf(progressBlue);
                 textViewBlueValue.setText(progressBlueStr);
                 editTextBlue.setText(progressBlueStr);
+                onConvertRgbToHex();
             }
 
             @Override
@@ -125,6 +129,52 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "BLUE: "+progressBlueStr, Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+    // setting edit text change listeners
+
+    @OnTextChanged(R.id.editTextRed)
+    public void onTextRedChanged(CharSequence textRed, int start, int count, int after) {
+
+        if (textRed.length() > 0) {
+            seekBarRed.setProgress(Integer.parseInt(textRed.toString()));
+        } else {
+            Toast.makeText(getApplicationContext(), "Set RED Value!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @OnTextChanged(R.id.editTextGreen)
+    public void onTextGreenChanged(CharSequence textGreen, int start, int count, int after) {
+
+        if (textGreen.length() > 0) {
+            seekBarGreen.setProgress(Integer.parseInt(textGreen.toString()));
+        } else {
+            Toast.makeText(getApplicationContext(), "Set GREEN Value!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @OnTextChanged(R.id.editTextBlue)
+    public void onTextBlueChanged(CharSequence textBlue, int start, int count, int after) {
+
+        if (textBlue.length() > 0) {
+            seekBarBlue.setProgress(Integer.parseInt(textBlue.toString()));
+        } else {
+            Toast.makeText(getApplicationContext(), "Set BLUE Value!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @OnTextChanged(R.id.editTextHex)
+    public void onTextHexChanged(CharSequence textHex, int start, int count, int after) {
+
+        if (textHex.length() > 0) {
+            onConvertHexToRgb();
+        } else {
+            Toast.makeText(getApplicationContext(), "Set HEX Value!", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -168,10 +218,9 @@ public class MainActivity extends AppCompatActivity {
         return rgb;
     }
 
-    // setting on click listeners
+    // converter methods
 
-    @OnClick(R.id.buttonRgbToHex)
-    public void onConvertRgbToHex() {
+    private void onConvertRgbToHex() {
         String red = editTextRed.getText().toString();
         String green = editTextGreen.getText().toString();
         String blue = editTextBlue.getText().toString();
@@ -197,18 +246,17 @@ public class MainActivity extends AppCompatActivity {
                 seekBarGreen.refreshDrawableState();
                 seekBarBlue.refreshDrawableState();
             } else {
-                Toast.makeText(this, "RGB Values > 255", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "RGB Values > 255", Toast.LENGTH_SHORT).show();
             }
 
         } else {
-            Toast.makeText(this, "Invalid RGB Values", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Invalid RGB Values", Toast.LENGTH_SHORT).show();
         }
 
 
     }
 
-    @OnClick(R.id.buttonHexToRgb)
-    public void onConvertHexToRgb() {
+    private void onConvertHexToRgb() {
         int redValue;
         int greenValue;
         int blueValue;
@@ -234,8 +282,6 @@ public class MainActivity extends AppCompatActivity {
             seekBarRed.refreshDrawableState();
             seekBarGreen.refreshDrawableState();
             seekBarBlue.refreshDrawableState();
-        } else {
-            Toast.makeText(this, "Hex Value < 6 digits", Toast.LENGTH_LONG).show();
         }
     }
 

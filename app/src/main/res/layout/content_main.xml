@@ -52,7 +52,7 @@
                         android:id="@+id/editTextRed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="127"
+                        android:text="127"
                         android:textColor="@color/red"
                         android:maxLength="3"
                         android:digits="0123456789"
@@ -62,7 +62,7 @@
                         android:id="@+id/editTextGreen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="127"
+                        android:text="127"
                         android:textColor="@color/green"
                         android:maxLength="3"
                         android:digits="0123456789"
@@ -72,38 +72,13 @@
                         android:id="@+id/editTextBlue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="127"
+                        android:text="127"
                         android:textColor="@color/blue"
                         android:maxLength="3"
                         android:digits="0123456789"
                         android:inputType="numberDecimal"/>
 
                 </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/buttonRgbToHex"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:text="RGB To HEX"
-                    android:background="@drawable/button_selector"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@color/white"/>
-
-                <Button
-                    android:id="@+id/buttonHexToRgb"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:text="HEX To RGB"
-                    android:background="@drawable/button_selector"
-                    android:textColor="@color/white"/>
 
             </LinearLayout>
 
@@ -135,7 +110,7 @@
                         android:id="@+id/editTextHex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="7F7F7F"
+                        android:text="7F7F7F"
                         android:maxLength="6"
                         android:digits="0123456789ABCDEF"
                         android:inputType="textCapCharacters"/>
