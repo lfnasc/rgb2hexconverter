@@ -21,4 +21,10 @@
     <color name="blue">#0000FF</color>
     <color name="navy">#000080</color>
     <color name="black">#000000</color>
+
+    <!-- SeekBar Colors -->
+    <color name="light_gray">#D9D9D9</color>
+    <color name="transparent_red">#55FF0000</color>
+    <color name="transparent_green">#55008000</color>
+    <color name="transparent_blue">#550000FF</color>
 </resources>
