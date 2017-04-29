@@ -8,6 +8,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.Selection;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -50,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.viewColor)
     View viewColor;
 
+    private boolean isInputText = false;
+    private int inputPositionCursor;
+    private Editable inputEditable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
                 progressRed = i;
                 progressRedStr = String.valueOf(progressRed);
                 textViewRedValue.setText(progressRedStr);
-                editTextRed.setText(progressRedStr);
+                if (!isInputText) {
+                    editTextRed.setText(progressRedStr);
+                }
                 onConvertRgbToHex();
             }
 
@@ -93,7 +101,9 @@ public class MainActivity extends AppCompatActivity {
                 progressGreen = i;
                 progressGreenStr = String.valueOf(progressGreen);
                 textViewGreenValue.setText(progressGreenStr);
-                editTextGreen.setText(progressGreenStr);
+                if (!isInputText) {
+                    editTextGreen.setText(progressGreenStr);
+                }
                 onConvertRgbToHex();
             }
 
@@ -116,7 +126,9 @@ public class MainActivity extends AppCompatActivity {
                 progressBlue = i;
                 progressBlueStr = String.valueOf(progressBlue);
                 textViewBlueValue.setText(progressBlueStr);
-                editTextBlue.setText(progressBlueStr);
+                if (!isInputText) {
+                    editTextBlue.setText(progressBlueStr);
+                }
                 onConvertRgbToHex();
             }
 
@@ -138,7 +150,12 @@ public class MainActivity extends AppCompatActivity {
     public void onTextRedChanged(CharSequence textRed, int start, int count, int after) {
 
         if (textRed.length() > 0) {
+            isInputText = true;
             seekBarRed.setProgress(Integer.parseInt(textRed.toString()));
+            inputPositionCursor = editTextRed.length();
+            inputEditable = editTextRed.getText();
+            Selection.setSelection(inputEditable, inputPositionCursor);
+            isInputText = false;
         } else {
             Toast.makeText(getApplicationContext(), "Set RED Value!", Toast.LENGTH_SHORT).show();
         }
@@ -149,7 +166,12 @@ public class MainActivity extends AppCompatActivity {
     public void onTextGreenChanged(CharSequence textGreen, int start, int count, int after) {
 
         if (textGreen.length() > 0) {
+            isInputText = true;
             seekBarGreen.setProgress(Integer.parseInt(textGreen.toString()));
+            inputPositionCursor = editTextGreen.length();
+            inputEditable = editTextGreen.getText();
+            Selection.setSelection(inputEditable, inputPositionCursor);
+            isInputText = false;
         } else {
             Toast.makeText(getApplicationContext(), "Set GREEN Value!", Toast.LENGTH_SHORT).show();
         }
@@ -160,7 +182,12 @@ public class MainActivity extends AppCompatActivity {
     public void onTextBlueChanged(CharSequence textBlue, int start, int count, int after) {
 
         if (textBlue.length() > 0) {
+            isInputText = true;
             seekBarBlue.setProgress(Integer.parseInt(textBlue.toString()));
+            inputPositionCursor = editTextBlue.length();
+            inputEditable = editTextBlue.getText();
+            Selection.setSelection(inputEditable, inputPositionCursor);
+            isInputText = false;
         } else {
             Toast.makeText(getApplicationContext(), "Set BLUE Value!", Toast.LENGTH_SHORT).show();
         }
@@ -237,14 +264,6 @@ public class MainActivity extends AppCompatActivity {
                 viewColor.setBackgroundColor(colorInt);
                 colorStr = intColorToString(colorInt);
                 editTextHex.setText(colorStr);
-
-                seekBarRed.setProgress(redValue);
-                seekBarGreen.setProgress(greenValue);
-                seekBarBlue.setProgress(blueValue);
-
-                seekBarRed.refreshDrawableState();
-                seekBarGreen.refreshDrawableState();
-                seekBarBlue.refreshDrawableState();
             } else {
                 Toast.makeText(this, "RGB Values > 255", Toast.LENGTH_SHORT).show();
             }
@@ -274,14 +293,9 @@ public class MainActivity extends AppCompatActivity {
             editTextRed.setText(String.valueOf(redValue));
             editTextGreen.setText(String.valueOf(greenValue));
             editTextBlue.setText(String.valueOf(blueValue));
-
-            seekBarRed.setProgress(redValue);
-            seekBarGreen.setProgress(greenValue);
-            seekBarBlue.setProgress(blueValue);
-
-            seekBarRed.refreshDrawableState();
-            seekBarGreen.refreshDrawableState();
-            seekBarBlue.refreshDrawableState();
+            inputPositionCursor = editTextHex.length();
+            inputEditable = editTextHex.getText();
+            Selection.setSelection(inputEditable, inputPositionCursor);
         }
     }
 
