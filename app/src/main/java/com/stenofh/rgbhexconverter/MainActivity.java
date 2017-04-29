@@ -316,16 +316,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.about_title)
-                    .setMessage(R.string.about_message)
-                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                        }
-                    })
-                    .show();
+            AboutDialog aboutDialog = new AboutDialog(this);
+            aboutDialog.show();
             return true;
         }
 
