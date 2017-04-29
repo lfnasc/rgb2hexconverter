@@ -40,7 +40,8 @@
                     android:id="@+id/textViewRGB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="[RGB]"/>
+                    android:text="RGB"
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -50,33 +51,36 @@
 
                     <EditText
                         android:id="@+id/editTextRed"
-                        android:layout_width="wrap_content"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:text="127"
                         android:textColor="@color/red"
                         android:maxLength="3"
                         android:digits="0123456789"
-                        android:inputType="numberDecimal"/>
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"/>
 
                     <EditText
                         android:id="@+id/editTextGreen"
-                        android:layout_width="wrap_content"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:text="127"
                         android:textColor="@color/green"
                         android:maxLength="3"
                         android:digits="0123456789"
-                        android:inputType="numberDecimal"/>
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"/>
 
                     <EditText
                         android:id="@+id/editTextBlue"
-                        android:layout_width="wrap_content"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:text="127"
                         android:textColor="@color/blue"
                         android:maxLength="3"
                         android:digits="0123456789"
-                        android:inputType="numberDecimal"/>
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"/>
 
                 </LinearLayout>
 
@@ -93,7 +97,8 @@
                     android:id="@+id/textViewHEX"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="[HEX]"/>
+                    android:text="HEX"
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -104,16 +109,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="#"/>
+                        android:text="#"
+                        android:textStyle="bold"/>
 
                     <EditText
                         android:id="@+id/editTextHex"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:text="7F7F7F"
                         android:maxLength="6"
                         android:digits="0123456789ABCDEF"
-                        android:inputType="textCapCharacters"/>
+                        android:inputType="textCapCharacters"
+                        android:textAlignment="center"/>
 
                 </LinearLayout>
 
@@ -251,12 +258,6 @@
         android:layout_below="@+id/areaColorSettings"
         android:layout_margin="10dp"
         android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="[COLOR VIEW]"
-            android:layout_marginBottom="10dp"/>
 
         <View
             android:id="@+id/viewColor"

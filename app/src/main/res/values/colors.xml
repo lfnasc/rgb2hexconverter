@@ -24,7 +24,7 @@
 
     <!-- SeekBar Colors -->
     <color name="light_gray">#D9D9D9</color>
-    <color name="transparent_red">#55FF0000</color>
-    <color name="transparent_green">#55008000</color>
-    <color name="transparent_blue">#550000FF</color>
+    <color name="transparent_red">#88FF0000</color>
+    <color name="transparent_green">#88008000</color>
+    <color name="transparent_blue">#880000FF</color>
 </resources>
