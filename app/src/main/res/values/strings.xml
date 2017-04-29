@@ -4,8 +4,7 @@
     <string name="action_about">About</string>
 
     <!-- About -->
-    <string name="about_title">RGB/HEX Converter ABOUT</string>
-    <string name="about_message">This app was developed by Leonardo Stenofh to help beginner front-end developers
-    to convert and view colors in RGB and HEX format.</string>
+    <string name="about_title">About</string>
+    <string name="about_message">This app aims to help beginner front end developers to view and convert colors in RGB and HEX formats.</string>
     <string name="ok">OK</string>
 </resources>
