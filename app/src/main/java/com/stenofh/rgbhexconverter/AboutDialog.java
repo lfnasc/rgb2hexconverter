@@ -4,7 +4,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.text.method.LinkMovementMethod;
+import android.widget.TextView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -13,6 +16,9 @@ import butterknife.OnClick;
  */
 
 public class AboutDialog extends Dialog {
+
+    @BindView(R.id.textViewSourceCodeLink)
+    TextView textViewSourceCodeLink;
 
     public AboutDialog(@NonNull Context context) {
         super(context);
@@ -25,6 +31,9 @@ public class AboutDialog extends Dialog {
 
         // setting ButterKnife
         ButterKnife.bind(this);
+
+        // setting link source code
+        textViewSourceCodeLink.setMovementMethod(LinkMovementMethod.getInstance());
 
     }
 

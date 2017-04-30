@@ -6,5 +6,7 @@
     <!-- About -->
     <string name="about_title">About</string>
     <string name="about_message">This app aims to help beginner Front-End developers to view and convert colors in RGB and HEX formats.</string>
+    <string name="about_notice">This app is open source, you can find the source code at:</string>
+    <string name="about_source_code_link"><a href="https://github.com/lfnasc/rgb2hexconverter">https://github.com/lfnasc/rgb2hexconverter</a></string>
     <string name="ok">OK</string>
 </resources>
