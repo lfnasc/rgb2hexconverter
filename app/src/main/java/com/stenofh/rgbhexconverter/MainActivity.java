@@ -1,7 +1,5 @@
 package com.stenofh.rgbhexconverter;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -223,10 +221,6 @@ public class MainActivity extends AppCompatActivity {
     private int rgbToIntColor(int redValue, int greenValue, int blueValue) {
         return android.graphics.Color.rgb(redValue, greenValue, blueValue);
     }
-
-//    private String intColorToHexString(int color) {
-//        return Integer.toHexString(color);
-//    }
 
     private String intColorToString(int color) {
         return String.format("%06X", 0xFFFFFF & color);
